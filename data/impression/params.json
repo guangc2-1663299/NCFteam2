@@ -1,0 +1,5 @@
+{
+  "data_dir": "raw_data/impression",
+  "train_rating": "sample_train",
+  "test_negative": "sample_test"
+}
