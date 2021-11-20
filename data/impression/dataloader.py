@@ -14,7 +14,7 @@ def load_all(params):
     user_num = train_data['user_index'].nunique()
     item_num = train_data['mlog_index'].nunique()
 
-    train_data2 = train_data.values.tolist()
+    train_data = train_data.values.tolist()
 
     print('load ratings as a dok matrix')
     train_mat = sp.dok_matrix((user_num, item_num), dtype=np.float32)
