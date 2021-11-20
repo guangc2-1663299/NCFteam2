@@ -14,7 +14,7 @@ import utils
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', default='ml-1m', help='Name of the dataset')
+    parser.add_argument('--dataset', default='impression', help='Name of the dataset')
     parser.add_argument('--dataloader', default='ncf_default', help='Which data loader to use')
     parser.add_argument('--model', default='ncf', choices=utils.model_list(), help='Which model to use')
     parser.add_argument('--model-dir', default='base_model',
