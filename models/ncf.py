@@ -5,7 +5,7 @@ import torch.nn as nn
 import torch.optim as optim
 import logging
 from tqdm import trange
-from torch.utils.tensorboard import SummaryWriter
+#from torch.utils.tensorboard import SummaryWriter
 from datetime import datetime
 
 logger = logging.getLogger('RMD.ncf')
