@@ -18,7 +18,7 @@ def load_all(params):
 
     print('load ratings as a dok matrix')
     train_mat = sp.dok_matrix((user_num, item_num), dtype=np.float32)
-    for x in tqdm(train_data2):
+    for x in tqdm(train_data):
         train_mat[x[0], x[1]] = x[2]
 
     test_data = pd.read_csv(os.path.join('data', params.data_dir, params.test_negative), dtype={0: np.int32, 1: np.int32})
