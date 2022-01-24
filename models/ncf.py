@@ -87,6 +87,10 @@ class Net(nn.Module):
             GMF_model: pre-trained GMF weights
             MLP_model: pre-trained MLP weights
 		"""
+        #self.custom_embedding1 = nn.Embedding(num_class, embed_size)
+        #self.custom_embedding1 = nn.Embedding(num_class, embed_size)
+        #self.custom_embedding1 = nn.Embedding(num_class, embed_size)
+        #self.custom_embedding1 = nn.Embedding(num_class, embed_size)
         super(Net, self).__init__()
         self.dropout = params.dropout
         self.model = model
@@ -96,7 +100,8 @@ class Net(nn.Module):
         num_layers = params.num_layers
         user_num = params.user_num
         item_num = params.item_num
-
+        #self.embed_user_GMF = nn.Linear(in_features=3,out_features=1)
+        #self.embed_user_GMF = nn.Linear(in_features=3,out_features=1)
         self.embed_user_GMF = nn.Embedding(user_num, factor_num)
         self.embed_item_GMF = nn.Embedding(item_num, factor_num)
         self.embed_user_MLP = nn.Embedding(
@@ -166,6 +171,9 @@ class Net(nn.Module):
             self.predict_layer.bias.data.copy_(0.5 * precit_bias)
 
     def forward(self, user, item):
+        #extract the integer corresponding to the variable in the user or item column
+        #user[:, 5], and call self.custom_embedding1(user[:, 5])
+
         if not self.model == 'MLP':
             embed_user_GMF = self.embed_user_GMF(user)
             embed_item_GMF = self.embed_item_GMF(item)
